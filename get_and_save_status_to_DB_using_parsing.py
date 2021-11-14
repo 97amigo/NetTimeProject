@@ -4,6 +4,8 @@ import sqlite3
 import numpy as np
 import matplotlib.pyplot as plt
 
+ID_person = ""			# Сюда вводится id интересующего нас человека
+
 current_date = str(datetime.datetime.now())[0:10]       # текущая дата (год плюс число)
 conn = sqlite3.connect("{}.db".format(current_date))    # создание базы данных с одноимённым названием
 cursor = conn.cursor()
@@ -45,7 +47,7 @@ try:
 
         # Статус извлекаем из скачанной странички
 
-        f = urllib.request.urlopen('https://vk.com/IDНужногоЧеловека').read()
+        f = urllib.request.urlopen('https://vk.com/' + ID_person).read()
         index_of_interest_string = f.decode('utf-8').find('<span class="pp_last_activity_text">')
         if f.decode('utf-8')[index_of_interest_string + 36: index_of_interest_string + 42] == 'Online':
             isOnline = '1'      # человек онлайн
