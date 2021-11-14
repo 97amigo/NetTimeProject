@@ -1,3 +1,4 @@
-NetTimeProject
+### Скрипт для парсинга страницы ВК интересующего нас пользователя на предмет того, онлайн он или нет
+#### Результат записывается в базу данных sqLite и выводится на график в реальном времени
 
-Study project. Can help you get vk.com activity (online or not) from person you want.
+В ID_person пишем id интересующего нас человека
